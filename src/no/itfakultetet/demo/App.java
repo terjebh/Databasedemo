@@ -1,6 +1,8 @@
 package no.itfakultetet.demo;
 
+import no.itfakultetet.demo.model.Desktop;
 import no.itfakultetet.demo.model.Laptop;
+import no.itfakultetet.demo.model.Server;
 import no.itfakultetet.demo.view.Rapport;
 
 import java.sql.SQLException;
@@ -8,7 +10,7 @@ import java.util.Scanner;
 
 public class App {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
 
         Scanner in = new Scanner(System.in);
 
@@ -30,12 +32,14 @@ public class App {
                     Laptop.lagNyLaptop();
                 }
                 case "2" -> {
+                    Desktop.lagNyDesktop();
                 }
                 case "3" -> {
-                    //TODO lag rutine for å sette inn ny server
+                    Server.lagNyServer();
                 }
                 case "4" -> {
-
+                    Rapport rapport = new Rapport();
+                    rapport.lagRapport();
                 }
                 default -> System.out.println("Ukjent menyvalg...");
             }

@@ -13,6 +13,12 @@ import java.util.Formatter;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Klasse som man kan lage Rapporter fra.
+ *
+ * @author Terje Berg-Hansen
+ *
+ */
 public class Rapport implements Rapporter {
 
     public long antallDatamaskiner;
@@ -24,7 +30,9 @@ public class Rapport implements Rapporter {
     public void lagRapport() throws SQLException {
         printRapportHeader();
         visRapport("Laptop");
-       // visRapport("Desktop");
+        visRapport("Desktop");
+        visRapport("Server");
+
         // TODO
         // visRapport("Server");
         printRapportFooter();

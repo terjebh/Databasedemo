@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"no.itfakultetet.demo"},{"l":"no.itfakultetet.demo.dao"},{"l":"no.itfakultetet.demo.model"},{"l":"no.itfakultetet.demo.view"}];updateSearchResults();

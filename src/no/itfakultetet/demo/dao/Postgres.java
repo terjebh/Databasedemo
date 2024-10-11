@@ -1,15 +1,30 @@
 package no.itfakultetet.demo.dao;
 
 import no.itfakultetet.demo.model.Datamaskin;
+import no.itfakultetet.demo.model.Desktop;
 import no.itfakultetet.demo.model.Laptop;
+import no.itfakultetet.demo.model.Server;
+
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Klasse med metoder som henter og lagrer data i en Postgresql-database.
+ *
+ * @author Terje Berg-Hansen
+ *
+ */
 public class Postgres {
 
+    /**
+     * Setter inn nye rader i ulike tabeller, avhengig av maskintype
+     *
+     *
+     * @param maskin
+     */
     public static void insertMaskin(Datamaskin maskin) {
 
     String url = "jdbc:postgresql://itfakultetet.no/maskiner?user=kurs&password=kurs123&ssl=false";
@@ -18,8 +33,8 @@ public class Postgres {
 
             String tabell = null;
             if (maskin instanceof Laptop) tabell = "laptop";
-          //  if (maskin instanceof Desktop) tabell = "desktop";
-          //  if (maskin instanceof Server) tabell = "server";
+            if (maskin instanceof Desktop) tabell = "desktop";
+            if (maskin instanceof Server) tabell = "server";
 
             System.out.println(tabell);
 
@@ -52,8 +67,8 @@ public class Postgres {
             while (rs.next()) {
                 switch (Objects.requireNonNull(maskinType)) {
                     case "Laptop" -> maskinliste.add(new Laptop(rs.getString(1), rs.getInt(2), rs.getInt(3)));
-                  //  case "Desktop" -> maskinliste.add(new Desktop(rs.getString(1), rs.getInt(2), rs.getInt(3)));
-                  //  case "Server" -> maskinliste.add(new Server(rs.getString(1), rs.getInt(2), rs.getInt(3)));
+                    case "Desktop" -> maskinliste.add(new Desktop(rs.getString(1), rs.getInt(2), rs.getInt(3)));
+                    case "Server" -> maskinliste.add(new Server(rs.getString(1), rs.getInt(2), rs.getInt(3)));
                 }
             }
 

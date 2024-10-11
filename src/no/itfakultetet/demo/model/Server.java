@@ -3,22 +3,19 @@ package no.itfakultetet.demo.model;
 import no.itfakultetet.demo.dao.Postgres;
 
 import java.util.Scanner;
-
 /**
- * Klasse som man kan lage Laptop-objekter fra.
+ * Klasse som man kan lage Server-objekter fra.
  *
  * @author Terje Berg-Hansen
  *
  */
-public class Laptop extends Datamaskin{
+public class Server extends Datamaskin{
 
-    private int skjermstørrelse;
-    private String batteritype;
 
-    public Laptop() {
+    public Server() {
     }
 
-    public Laptop(String merke, int modell, int pris) {
+    public Server(String merke, int modell, int pris) {
 
         setMerke(merke);
         setÅrsmodell(modell);
@@ -27,9 +24,9 @@ public class Laptop extends Datamaskin{
     }
 
 
-    public static void lagNyLaptop () {
+    public static void lagNyServer () {
 
-        System.out.println("Ny Laptop");
+        System.out.println("Ny Server");
         Scanner leggInn = new Scanner(System.in);
         System.out.print("Merke: ");
         String merke = leggInn.nextLine();
@@ -38,7 +35,7 @@ public class Laptop extends Datamaskin{
         System.out.print("Pris: ");
         Integer pris = leggInn.nextInt();
 
-        Datamaskin l = new Laptop(merke, modell, pris);
+        Datamaskin l = new Server(merke, modell, pris);
 
         System.out.println("Lagree i Database? (J/N)");
         String lagreValg = leggInn.next();
