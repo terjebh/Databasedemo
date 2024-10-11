@@ -37,7 +37,6 @@ public class Datamaskin {
         return "Datamaskin{" +
                 "årsmodell=" + årsmodell +
                 ", merke='" + merke + '\'' +
-                ", pris=" + pris +
                 '}';
     }
 }

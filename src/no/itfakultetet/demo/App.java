@@ -1,5 +1,9 @@
 package no.itfakultetet.demo;
 
+import no.itfakultetet.demo.model.Laptop;
+import no.itfakultetet.demo.view.Rapport;
+
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class App {
@@ -23,7 +27,7 @@ public class App {
                     System.exit(0);
                 }
                 case "1" -> {
-
+                    Laptop.lagNyLaptop();
                 }
                 case "2" -> {
                 }
@@ -31,6 +35,7 @@ public class App {
                     //TODO lag rutine for å sette inn ny server
                 }
                 case "4" -> {
+
                 }
                 default -> System.out.println("Ukjent menyvalg...");
             }
